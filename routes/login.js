@@ -31,10 +31,18 @@ router.post('/', function (req, res) {
                 var token = jwt.sign(user, req.app.get('superSecret'));
 
                 // return the information including token as JSON
+                delete user.password;
+
                 res.json({
                     success: true,
-                    message: 'Enjoy your token!',
-                    token: token
+                    message: 'Login successful',
+                    token: token,
+                    data: {
+                        "_id": user._id,
+                        "name": user.name,
+                        "username": user.username,
+                        "roleId": user.roleId,
+                    }
                 });
             }
 

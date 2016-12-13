@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routConfig = require('./routConfig');
+var cors = require('cors');
 // connect to database
 var db = require('./db');
 
@@ -23,8 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//cors filter
+app.use(cors());
+
 // @marjo configure all routs
 routConfig(app);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
