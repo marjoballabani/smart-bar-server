@@ -6,11 +6,11 @@ var category = require('./routes/category');
 var user = require('./routes/user');
 
 var routConfig = function (app) {
-	app.use('/api', auth);
-	app.use('/api/login', login);
-	app.use('/api/table', table);
-	app.use('/api/category', category);
-	app.use('/api/user', user);
+	app.use('/', auth);
+	app.use('/login', login);
+	app.use('/table', table);
+	app.use('/category', category);
+	app.use('/user', user);
 
 };
 
