@@ -1,5 +1,5 @@
 // var root = 'http://localhost:3000/';
-var root = 'https://smart-bar.herokuapp.com/';
+var root = 'https://smart-bar.herokuapp.com/api/';
 angular
 .module("commons")
 .constant('Constants', {
