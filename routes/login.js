@@ -19,7 +19,7 @@ router.post('/', function (req, res) {
         if (!user) {
             res.json({success: false, message: 'Authentication failed. User not found.'});
         } else if (user) {
-
+            console.log(user)
             // check if password matches
             if (user.password != req.body.password) {
                 res.json({success: false, message: 'Authentication failed. Wrong password.'});
