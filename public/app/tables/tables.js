@@ -9,6 +9,11 @@ angular
         $state
     ) {
         console.log('mainController started');
+        DataFactory.getTables((success) => {
+            this.tables = DataFactory.tables = success.data;
+        }, (error) => {
+            console.log(error)
+        });
         this.tables = DataFactory.tables;
 
         /**

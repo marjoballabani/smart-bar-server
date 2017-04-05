@@ -13,7 +13,7 @@ var apiRoutes = express.Router();
 router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-access-token");
-    if(req.originalUrl == '/login') {
+    if(req.originalUrl == '/api/login') {
         next()
     } else {
         // check header or url parameters or post parameters for token
